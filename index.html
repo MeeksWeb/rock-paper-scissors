@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>rock-paper-scissors</title>
+  </head>
+  <body
+    class="bg-gray-200 w-screen h-screen mx-auto flex items-center justify-center text-white"
+  >
+    <div
+      class="container bg-[#231601] rounded-2xl w-fit h-fit flex flex-col items-center p-10 gap-8 justify-between"
+    >
+      <h1 class="text-3xl font-bold text-[#FF671B]">Rock Paper Scissors</h1>
+      <div class="top flex flex-col items-center gap-5">
+        <p class="text-xl font-bold text-[#FFF5CF]">Choose your move:</p>
+        <div class="btns flex gap-3">
+          <button
+            class="rock bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+          >
+            <i class="fas fa-hand-rock text-xl mr-1"></i>Rock
+          </button>
+          <button
+            class="paper bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+          >
+            <i class="fas fa-hand-paper text-xl mr-1"></i>Paper
+          </button>
+          <button
+            class="scissors bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+          >
+            <i class="fa-solid fa-hand-scissors text-xl mr-1"></i>Scissors
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="result h-32 flex flex-col text-xl items-center font-bold p-4 text-[#FF671B]"
+      >
+        <div class="moves mb-3">
+          <p>Your Move: <span class="player-move text-white"></span></p>
+          <p>Computer's Move: <span class="computer-move text-white"></span></p>
+        </div>
+        <p class="outcome text-green-500 text-lg font-bold text-center"></p>
+      </div>
+
+      <section class="footer flex items-center flex-col gap-4">
+        <div class="score text-lg font-bold text-[#FF671B] flex gap-4">
+          <h6 class="text-lg font-bold text-green-500">
+            Wins: <span class="score-wins">0</span>
+          </h6>
+          <h6 class="text-lg font-bold text-red-500">
+            Losses: <span class="score-losses">0</span>
+          </h6>
+          <h6 class="text-lg font-bold text-yellow-500">
+            Ties: <span class="score-draws">0</span>
+          </h6>
+        </div>
+        <button
+          class="reset-btn bg-[#FFF5CF] hover:bg-[#FFF5CF]/80 w-28 text-[#231601] py-2 px-4 rounded-lg"
+        >
+          Reset
+        </button>
+      </section>
+
+      <div class="rule">
+        <h2 class="text-xl font-bold text-[#FF671B] mb-2 text-center">
+          Rules:
+        </h2>
+        <p class="w-130 text-center text-[#FFF5CF]">
+          Rock beats Scissors, Scissors beats Paper, Paper beats Rock, first to
+          <span class="text-green-500 font-bold">12</span> is the winner!
+        </p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
