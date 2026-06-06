@@ -14,69 +14,80 @@
     <title>rock-paper-scissors</title>
   </head>
   <body
-    class="bg-gray-200 w-screen h-screen mx-auto flex items-center justify-center text-white"
+    class="bg-gray-200 h-screen mx-auto flex items-center justify-center text-white"
   >
     <div
-      class="container bg-[#231601] rounded-2xl w-fit h-fit flex flex-col items-center p-10 gap-8 justify-between"
+      class="container bg-[#231601] sm:rounded-2xl w-[100%] sm:w-[500px] max-w-full mx-auto h-full sm:h-fit flex flex-col items-center justify-center p-4 sm:p-10 sm:gap-8 gap-2 space-y-10 sm:space-y-0"
     >
-      <h1 class="text-3xl font-bold text-[#FF671B]">Rock Paper Scissors</h1>
-      <div class="top flex flex-col items-center gap-5">
-        <p class="text-xl font-bold text-[#FFF5CF]">Choose your move:</p>
-        <div class="btns flex gap-3">
-          <button
-            class="rock bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
-          >
-            <i class="fas fa-hand-rock text-xl mr-1"></i>Rock
-          </button>
-          <button
-            class="paper bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
-          >
-            <i class="fas fa-hand-paper text-xl mr-1"></i>Paper
-          </button>
-          <button
-            class="scissors bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
-          >
-            <i class="fa-solid fa-hand-scissors text-xl mr-1"></i>Scissors
-          </button>
-        </div>
+      <div class="header mb-12 sm:mb-0 flex flex-col items-center gap-2">
+        <h1 class="text-3xl font-bold text-[#FF671B]">Rock Paper Scissors</h1>
+        <p class="text-lg text-[#FFF5CF] text-center">
+          Welcome to the ultimate Rock Paper Scissors game! Challenge the
+          computer and see if you can outsmart it. First to
+          <span class="text-green-500 font-bold">12</span> wins! Are you ready
+          to play?
+        </p>
       </div>
-
-      <div
-        class="result h-32 flex flex-col text-xl items-center font-bold p-4 text-[#FF671B]"
-      >
-        <div class="moves mb-3">
-          <p>Your Move: <span class="player-move text-white"></span></p>
-          <p>Computer's Move: <span class="computer-move text-white"></span></p>
+      <div class="content">
+        <div class="top flex flex-col items-center gap-5">
+          <p class="text-xl font-bold text-[#FFF5CF]">Choose your move:</p>
+          <div class="btns flex gap-2 sm:gap-3">
+            <button
+              class="rock bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+            >
+              <i class="fas fa-hand-rock text-xl mr-1"></i>Rock
+            </button>
+            <button
+              class="paper bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+            >
+              <i class="fas fa-hand-paper text-xl mr-1"></i>Paper
+            </button>
+            <button
+              class="scissors bg-[#FF671B] transition-all duration-200 hover:bg-[#FF671B]/80 w-28 text-white py-4 px-4 rounded-lg active:scale-95"
+            >
+              <i class="fa-solid fa-hand-scissors text-xl mr-1"></i>Scissors
+            </button>
+          </div>
         </div>
-        <p class="outcome text-green-500 text-lg font-bold text-center"></p>
-      </div>
 
-      <section class="footer flex items-center flex-col gap-4">
-        <div class="score text-lg font-bold text-[#FF671B] flex gap-4">
-          <h6 class="text-lg font-bold text-green-500">
-            Wins: <span class="score-wins">0</span>
-          </h6>
-          <h6 class="text-lg font-bold text-red-500">
-            Losses: <span class="score-losses">0</span>
-          </h6>
-          <h6 class="text-lg font-bold text-yellow-500">
-            Ties: <span class="score-draws">0</span>
-          </h6>
-        </div>
-        <button
-          class="reset-btn bg-[#FFF5CF] hover:bg-[#FFF5CF]/80 w-28 text-[#231601] py-2 px-4 rounded-lg"
+        <div
+          class="result h-32 flex flex-col space-y-6 text-xl items-center font-bold p-4 text-[#FF671B]"
         >
-          Reset
-        </button>
-      </section>
+          <div class="moves mb-3">
+            <p>Your Move: <span class="player-move text-white"></span></p>
+            <p>
+              Computer's Move: <span class="computer-move text-white"></span>
+            </p>
+          </div>
+          <p class="outcome text-green-500 text-lg font-bold text-center"></p>
+        </div>
+
+        <section class="footer flex items-center flex-col gap-4">
+          <div class="score text-lg font-bold text-[#FF671B] flex gap-4">
+            <h6 class="text-lg font-bold text-green-500">
+              Wins: <span class="score-wins">0</span>
+            </h6>
+            <h6 class="text-lg font-bold text-red-500">
+              Losses: <span class="score-losses">0</span>
+            </h6>
+            <h6 class="text-lg font-bold text-yellow-500">
+              Ties: <span class="score-draws">0</span>
+            </h6>
+          </div>
+          <button
+            class="reset-btn bg-[#FFF5CF] hover:bg-[#FFF5CF]/80 w-28 text-[#231601] py-2 px-4 rounded-lg"
+          >
+            Reset
+          </button>
+        </section>
+      </div>
 
       <div class="rule">
         <h2 class="text-xl font-bold text-[#FF671B] mb-2 text-center">
           Rules:
         </h2>
-        <p class="w-130 text-center text-[#FFF5CF]">
-          Rock beats Scissors, Scissors beats Paper, Paper beats Rock, first to
-          <span class="text-green-500 font-bold">12</span> is the winner!
+        <p class="text-center text-[#FFF5CF]">
+          Rock beats Scissors, Scissors beats Paper, Paper beats Rock.
         </p>
       </div>
     </div>
