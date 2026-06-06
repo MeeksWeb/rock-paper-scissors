@@ -133,32 +133,34 @@ function resultColor(gameResult) {
 //a function to set the score to 0
 function clearScore() {
   const scoreObject = getFromStorage();
-  localStorage.clear();
-  wins = 0;
-  losses = 0;
-  draws = 0;
-  winScore.textContent = 0;
-  loseScore.textContent = 0;
-  drawScore.textContent = 0;
-  playerMove.textContent = "-";
-  computerMove1.textContent = "-";
-  outcome.textContent = "";
-  outcome.classList.remove(
-    "text-yellow-500",
-    "bg-yellow-500/10",
-    "border",
-    "border-yellow-500",
-    "px-4",
-    "py-1",
-    "rounded-full",
-    "text-center",
-    "text-red-500",
-    "bg-red-500/10",
-    "border-red-500",
-    "text-green-500",
-    "bg-green-500/10",
-    "border-green-500",
-  );
+  if (confirm("Are you sure to clear all scores?")) {
+    localStorage.clear();
+    wins = 0;
+    losses = 0;
+    draws = 0;
+    winScore.textContent = 0;
+    loseScore.textContent = 0;
+    drawScore.textContent = 0;
+    playerMove.textContent = "-";
+    computerMove1.textContent = "-";
+    outcome.textContent = "";
+    outcome.classList.remove(
+      "text-yellow-500",
+      "bg-yellow-500/10",
+      "border",
+      "border-yellow-500",
+      "px-4",
+      "py-1",
+      "rounded-full",
+      "text-center",
+      "text-red-500",
+      "bg-red-500/10",
+      "border-red-500",
+      "text-green-500",
+      "bg-green-500/10",
+      "border-green-500",
+    );
+  }
 }
 
 function getFromStorage() {
