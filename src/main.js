@@ -42,8 +42,9 @@ function rockChoice() {
 
   playerMove.textContent = "Rock";
   computerMove1.textContent = computerChose;
-  allScores(result);
   resultColor(result);
+  allScores(result);
+  // checkRound()
 }
 
 function paperChoice() {
@@ -57,8 +58,8 @@ function paperChoice() {
   }
   playerMove.textContent = "Paper";
   computerMove1.textContent = computerChose;
-  allScores(result);
   resultColor(result);
+  allScores(result);
 }
 
 function scissorsChoice() {
@@ -72,8 +73,8 @@ function scissorsChoice() {
   }
   playerMove.textContent = "Scissors";
   computerMove1.textContent = computerChose;
-  allScores(result);
   resultColor(result);
+  allScores(result);
 }
 
 function allScores(gameResult) {
@@ -144,23 +145,24 @@ function clearScore() {
     playerMove.textContent = "-";
     computerMove1.textContent = "-";
     outcome.textContent = "";
-    outcome.classList.remove(
-      "text-yellow-500",
-      "bg-yellow-500/10",
-      "border",
-      "border-yellow-500",
-      "px-4",
-      "py-1",
-      "rounded-full",
-      "text-center",
-      "text-red-500",
-      "bg-red-500/10",
-      "border-red-500",
-      "text-green-500",
-      "bg-green-500/10",
-      "border-green-500",
-    );
+    outcome.className = "";
   }
+}
+
+//without the confirm
+function clearScore2() {
+  const scoreObject = getFromStorage();
+  localStorage.clear();
+  wins = 0;
+  losses = 0;
+  draws = 0;
+  winScore.textContent = 0;
+  loseScore.textContent = 0;
+  drawScore.textContent = 0;
+  playerMove.textContent = "-";
+  computerMove1.textContent = "-";
+  outcome.textContent = "";
+  outcome.className = "";
 }
 
 function getFromStorage() {
@@ -180,26 +182,18 @@ function addItemToStorage(item) {
 }
 
 function checkRound() {
-  const scoreObject = getFromStorage();
 
-  scoreObject.forEach((element) => {
-    //update them
-    wins = element.wins;
-    losses = element.losses;
-    draws = element.draws;
-
-    if (wins === 13) {
-      alert("You won this round");
-      clearScore();
-    }
-    if (losses === 13) {
-      alert("You lost this round");
-      clearScore();
-    } else if (draws === 13) {
-      alert("This round ended in a tie");
-      clearScore();
-    }
-  });
+  if (wins === 12) {
+    alert("You won this round");
+    clearScore2();
+  }
+  if (losses === 12) {
+    alert("You lost this round");
+    clearScore2();
+  } else if (draws === 12) {
+    alert("This round ended in a tie");
+    clearScore2();
+  }
 }
 
 rock.addEventListener("click", rockChoice);
